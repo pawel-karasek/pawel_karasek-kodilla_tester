@@ -1,5 +1,12 @@
 public class FirstClass {
     public static void main(String[] args) {
+
+        Grades gr = new Grades();
+        gr.add(1);
+        gr.add(2);
+        gr.add(5);
+        System.out.println("last added " + gr.lastAdded() + " " + gr.average());
+
         NoteBook noteBook = new NoteBook(1200, 5000, 2016, "Dell");
         System.out.println(noteBook.brand + " weight " + noteBook.weight + "g" + " costs " + noteBook.price + "zł");
         noteBook.checkPriceAndYear();

@@ -13,8 +13,17 @@ public class Grades {
             this.grades[this.size] = value;
             this.size++;
         }
-        public String lastAdded[int value] {
-        if (this.size++);
-        return value;
+        int lastAdded() {
+        return this.grades[this.size - 1];
+        }
+        public double average() {
+        int sum = 0;
+        double avg;
+        for (int i = 0; i < size; i++) {
+                sum = sum + grades[i];
+            }
+            avg = sum / size;
+        return avg;
+
         }
 }
