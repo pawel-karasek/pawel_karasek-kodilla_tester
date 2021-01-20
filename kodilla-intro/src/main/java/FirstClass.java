@@ -1,6 +1,16 @@
 public class FirstClass {
     public static void main(String[] args) {
 
+        RandomNumbers rm = new RandomNumbers();
+        rm.generate(5000);
+        System.out.println(rm.maxValue());
+        System.out.println(rm.minValue());
+
+
+        /*
+        User usr = new User();
+        usr.main();
+
         Grades gr = new Grades();
         gr.add(1);
         gr.add(2);
@@ -22,6 +32,6 @@ public class FirstClass {
         NoteBook fancyNoteBook = new NoteBook(800, 5500, 2020, "MacBook");
         System.out.println(oldNoteBook.brand + " weights " + oldNoteBook.weight + "g" + " costs " + oldNoteBook.price + "zł");
         fancyNoteBook.checkPriceAndYear();
-
+*/
     }
 }

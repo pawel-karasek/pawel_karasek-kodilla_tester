@@ -7,7 +7,7 @@ public class NoteBook {
                 this.weight = weight;
                 this.price = price;
                 this.year = year;
-                this.brand = brand;
+        this.brand = brand;
         }
                 public void checkPriceAndYear() {
                 if (this.price < 2000 && this.year < 2010) {
