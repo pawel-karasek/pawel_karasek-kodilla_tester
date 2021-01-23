@@ -1,13 +1,16 @@
 public class FirstClass {
     public static void main(String[] args) {
 
+
+
+        /*
         RandomNumbers rm = new RandomNumbers();
         rm.generate(5000);
         System.out.println(rm.maxValue());
         System.out.println(rm.minValue());
 
 
-        /*
+
         User usr = new User();
         usr.main();
 
