@@ -7,6 +7,7 @@ public class User {
         users = new User[]{new User("Paweł", 34), new User("Wojtek", 67),
                 new User("Michał", 37), new User("Marta", 35)};
     }
+
     public User(String name, int yearsOld) {
         this.name = name;
         this.yearsOld = yearsOld;

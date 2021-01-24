@@ -9,7 +9,7 @@ public class RandomNumbers {
         int sum = 0;
         while (sum < bound) {
             int temp = random.nextInt(30);
-            sum = sum +temp;
+            sum = sum + temp;
             if (temp > max) {
                 max = temp;
             } else if (temp < min) {
@@ -19,14 +19,12 @@ public class RandomNumbers {
             // System.out.println(temp + " " + sum);
         }
     }
+
     public int maxValue() {
-    return max;
+        return max;
     }
+
     public int minValue() {
         return min;
     }
 }
-
-
-
-

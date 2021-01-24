@@ -1,3 +1,5 @@
+package prework;
+
 public class MainExtended {
     public static void main(String[] args) {
         String imieInazwisko = "Pawel Karasek";
