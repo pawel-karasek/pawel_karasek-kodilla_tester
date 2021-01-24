@@ -5,6 +5,7 @@ public class Book {
     private String title;
 
     static Book of(String author, String title) {
-    return of(author, title);
+    System.out.println(Book.of(author, title));
+        return of(author, title);
     }
 }
