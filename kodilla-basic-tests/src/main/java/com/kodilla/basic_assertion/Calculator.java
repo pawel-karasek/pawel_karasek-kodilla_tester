@@ -7,18 +7,26 @@ public class Calculator {
     public Calculator() {
     }
 
-    public void Sum(int firstNumber, int secondNumber) {
+    public int Sum(int firstNumber, int secondNumber) {
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
 
         int Summary = firstNumber + secondNumber;
-        System.out.println(Summary);
+        return Summary;
     }
-    public void Sub(int firstNumber, int secondNumber) {
+
+    public int Sub(int firstNumber, int secondNumber) {
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
 
         int Subtraction = firstNumber - secondNumber;
-        System.out.println(Subtraction);
+        return Subtraction;
+    }
+
+    public int Square(int firstNumber) {
+        this.firstNumber = firstNumber;
+
+        int SquareFirstNumber = firstNumber * firstNumber;
+        return SquareFirstNumber;
     }
 }
