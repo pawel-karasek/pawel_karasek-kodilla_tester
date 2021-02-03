@@ -1,4 +1,4 @@
-package com.kodilla.Abstracts.homeWork;
+package com.kodilla.abstracts.homeWork;
 
 public class Triangle extends Shape {
     private double h;

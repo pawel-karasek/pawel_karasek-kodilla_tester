@@ -1,4 +1,4 @@
-package com.kodilla.Abstracts;
+package com.kodilla.abstracts;
 
 public class Dog extends Animal{
     public Dog(int numberOfLegs) {

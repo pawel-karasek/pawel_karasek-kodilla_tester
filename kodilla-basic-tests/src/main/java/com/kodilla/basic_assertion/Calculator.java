@@ -29,4 +29,13 @@ public class Calculator {
         int SquareFirstNumber = firstNumber * firstNumber;
         return SquareFirstNumber;
     }
+
+    public int power(int firstNumber, int n) {
+        int p = 1;
+
+        for (int i = 0; i < n; i++) {
+            p = p * firstNumber;
+        }
+        return p;
+    }
 }

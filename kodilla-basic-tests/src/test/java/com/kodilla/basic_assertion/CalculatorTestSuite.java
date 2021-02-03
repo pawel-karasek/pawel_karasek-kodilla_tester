@@ -23,7 +23,19 @@ public class CalculatorTestSuite {
     public void testSquare() {
         Calculator calculator = new Calculator();
         int squareResult = calculator.Square(22);
-        if (calculator.firstNumber > 0) {
-        assertEquals(484, squareResult);
+            assertEquals(484, squareResult);
+        }
+
+    @Test
+    public void testPower() {
+        Calculator calculator = new Calculator();
+        int powerResult = calculator.power(2, 3);
+        assertEquals(8, powerResult);
+
+        powerResult = calculator.power(-2, 3);
+        assertEquals(-8, powerResult);
+
+        powerResult = calculator.power(2, 0);
+        assertEquals(1, powerResult);
     }
 }
