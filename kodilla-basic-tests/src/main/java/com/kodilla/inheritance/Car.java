@@ -13,7 +13,7 @@ public class Car {
     public void turnOnLights() {
         System.out.println("Lights were turned on");
     }
-    public void openDors() {
+    public void openDoors() {
         System.out.println("Opening 4 doors");
     }
     public int getWheels() {

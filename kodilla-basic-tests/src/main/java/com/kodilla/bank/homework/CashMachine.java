@@ -13,6 +13,43 @@ public class CashMachine {
             this.addTransaction(transaction);
         }
     }
+    public int payOutsCount() {
+        int count = 0;
+        for (int i = 0; i < transactions.length; i++) {
+            if (transactions[i] < 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+    public int payInsCount() {
+        int count = 0;
+        for (int i = 0; i < transactions.length; i++) {
+            if (transactions[i] > 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+    public int payOuts() {
+    int sum = 0;
+        for (int i = 0; i < transactions.length; i++) {
+        if (transactions[i] < 0) {
+            sum = sum + transactions[i];
+        }
+    }
+        return sum;
+}
+    public int payIns() {
+        int sum = 0;
+        for (int i = 0; i < transactions.length; i++) {
+            if (transactions[i] > 0) {
+                sum = sum + transactions[i];
+            }
+        }
+        return sum;
+    }
+
     private void addTransaction(int transaction) {
         this.size++;
         int newTab[] = new int[this.size];
