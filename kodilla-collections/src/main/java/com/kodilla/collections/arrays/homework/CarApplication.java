@@ -10,6 +10,16 @@ import java.util.Random;
 public class CarApplication {
     private static Car[] cars = {new Syrena(), new Opel(), new Ferrari()};
 
+    public static void main(String[] args) {
+        Random random = new Random();
+        Car[] garage = new Car[random.nextInt(15) + 1];
+        for (int i = 0; i <garage.length; i++)
+            garage[i] = drawCar();
+        for (Car car : garage)
+            CarUtils.describeCar(car);
+
+
+    }
 
     public static Car drawCar() {
 
@@ -21,6 +31,6 @@ public class CarApplication {
         for (int i = 0; i < increments; i++) {
         car.increaseSpeed();
         }
-        return car;
+            return car;
     }
 }
