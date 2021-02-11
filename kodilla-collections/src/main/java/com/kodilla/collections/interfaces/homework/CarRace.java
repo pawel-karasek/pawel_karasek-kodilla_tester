@@ -3,33 +3,23 @@ package com.kodilla.collections.interfaces.homework;
 public class CarRace {
     public static void main(String[] args) {
 
-        Syrena syrena = new Syrena(60, 1.1, 0.85);
-            showCarDetails(syrena);
+        Syrena syrena = new Syrena();
+            doRace(syrena);
 
-        Opel opel = new Opel(60, 2.5, 0.7);
-            showCarDetails(opel);
+        Opel opel = new Opel();
+            doRace(opel);
 
-        Ferrari ferrari = new Ferrari(60, 3.2, 0.5);
-            showCarDetails(ferrari);
+        Ferrari ferrari = new Ferrari();
+            doRace(ferrari);
     }
-    private static void showCarDetails(Car car) {
-        System.out.println(car.getSpeed());
+    public static void doRace(Car car) {
+        car.increaseSpeed();
+        car.increaseSpeed();
         car.increaseSpeed();
         car.decreaseSpeed();
+        car.decreaseSpeed();
+
+        System.out.println(car.getSpeed());
     }
-    private static void showSyrenaDetails(Syrena syrena) {
-        System.out.println(syrena.getSpeed());
-        syrena.increaseSpeed();
-        syrena.decreaseSpeed();
-    }
-    private static void showOpelDetails(Opel opel) {
-        System.out.println(opel.getSpeed());
-        opel.increaseSpeed();
-        opel.decreaseSpeed();
-    }
-    private static void showFerrariDetails(Ferrari ferrari) {
-        System.out.println(ferrari.getSpeed());
-        ferrari.increaseSpeed();
-        ferrari.decreaseSpeed();
-    }
+
 }

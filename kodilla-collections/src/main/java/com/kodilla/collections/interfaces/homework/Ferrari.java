@@ -1,15 +1,16 @@
 package com.kodilla.collections.interfaces.homework;
 
 public class Ferrari implements Car{
+    private String name = "Ferrari";
     private int speed;
-    private double engine;
-    private double breakes;
+    private int speedIncrement;
+    private int speedDecrement;
 
-    public Ferrari(int speed, double engine, double breakes) {
-     this.speed = speed;
-     this.engine = engine;
-     this.breakes = breakes;
+    public Ferrari() {
+        this.speedIncrement = 50;
+        this.speedDecrement = 30;
     }
+
     @Override
     public int getSpeed() {
         return speed;
@@ -17,11 +18,24 @@ public class Ferrari implements Car{
 
     @Override
     public void increaseSpeed() {
-        System.out.println(speed * engine);
+        speed = speed + speedIncrement;
+    }
+    @Override
+    public void decreaseSpeed() {
+        speed = speed - speedDecrement;
     }
 
     @Override
-    public void decreaseSpeed() {
-        System.out.println(speed * breakes);
+    public int getSpeedIncrement() {
+        return speedIncrement;
+    }
+
+    @Override
+    public int getSpeedDecrement() {
+        return speedDecrement;
+    }
+    @Override
+    public String getName() {
+        return name;
     }
 }

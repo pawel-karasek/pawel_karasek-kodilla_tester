@@ -1,14 +1,14 @@
 package com.kodilla.collections.interfaces.homework;
 
 public class Syrena implements Car{
-    private int speed;
-    private double engine;
-    private double breakes;
+    private String name = "syrena";
+    private int speed = 0;
+    private int speedIncrement;
+    private int speedDecrement;
 
-    public Syrena(int speed, double engine, double breakes) {
-        this.speed = speed;
-        this.engine = engine;
-        this.breakes = breakes;
+    public Syrena() {
+        this.speedIncrement = 20;
+        this.speedDecrement = 20;
     }
 
     @Override
@@ -18,11 +18,24 @@ public class Syrena implements Car{
 
     @Override
     public void increaseSpeed() {
-        System.out.println(speed * engine);
+        speed = speed + speedIncrement;
+    }
+    @Override
+    public void decreaseSpeed() {
+        speed = speed - speedDecrement;
     }
 
     @Override
-    public void decreaseSpeed() {
-        System.out.println(speed * breakes);
+    public int getSpeedIncrement() {
+        return speedIncrement;
+    }
+
+    @Override
+    public int getSpeedDecrement() {
+        return speedDecrement;
+    }
+    @Override
+    public String getName() {
+        return name;
     }
 }
