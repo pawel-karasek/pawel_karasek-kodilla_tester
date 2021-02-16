@@ -27,11 +27,11 @@ public class Stamp {
         return width;
     }
 
-    public void isMarked() {
-        if (marked == true){
-            System.out.println(", is marked");
+    private String isStamped() {
+        if (marked){
+            return "is marked";
         } else {
-            System.out.println(", is not marked");
+            return "is not marked";
         }
     }
 
@@ -41,7 +41,7 @@ public class Stamp {
                 "name='" + name + '\'' +
                 ", high=" + high +
                 ", width=" + width +
-                ", marked=" + marked +
+                ", marked=" + isStamped() +
                 '}';
     }
 
