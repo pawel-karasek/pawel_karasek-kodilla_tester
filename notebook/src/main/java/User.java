@@ -23,3 +23,19 @@ public class User {
         this.surname = surname;
     }
 }
+/*
+
+    static List<Book> books = new ArrayList<>();
+
+    boolean bookExists = false;
+        for (Book bookx : books) {
+                if (book.equals(bookx)) {
+                System.out.println(bookx + " already exist");
+                bookExists = true;
+                }
+                }
+                if (!bookExists) {
+                books.add(book);
+                }
+
+                */
