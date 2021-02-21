@@ -45,5 +45,9 @@ class DictionaryTestSuite {
         dictionary.addWord("grać", new EnglishWord(PartOfSpeech.VERB, "play"));
         // when
         List<EnglishWord> result = dictionary.findEnglishWords("brać", PartOfSpeech.NOUN);
+        // then
+        List<EnglishWord> expectedList = new ArrayList<>();
+                expectedList.add(new EnglishWord(PartOfSpeech.NOUN, "brotherhood"));
+                assertEquals(expectedList, result);
     }
 }
