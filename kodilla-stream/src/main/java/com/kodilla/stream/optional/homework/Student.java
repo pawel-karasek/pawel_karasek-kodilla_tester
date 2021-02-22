@@ -1,19 +1,20 @@
 package com.kodilla.stream.optional.homework;
 
 public class Student {
-    private static String name;
-    private static Teacher teacher;
+    public String name;
+    public Teacher teacher;
 
     public Student(String name, Teacher teacher) {
         this.name = name;
         this.teacher = teacher;
     }
 
-    public static String getName() {
+    public String getName() {
         return name;
     }
 
-    public static Teacher getTeacher() {
+    public Teacher getTeacher() {
         return teacher;
     }
+
 }
