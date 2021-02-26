@@ -10,6 +10,7 @@ public class Warehouse {
     private List<Order> orderList = new ArrayList<>();
 
     public void addOrder(Order order) {
+
         orderList.add(order);
     }
 
