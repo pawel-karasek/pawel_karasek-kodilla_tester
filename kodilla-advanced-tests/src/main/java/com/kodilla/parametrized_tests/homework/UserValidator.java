@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class UserValidator {
 
     public boolean validateUsername(String username) {
-        return username.matches("^[a-zA-Z0-9._-]{3,}$");
+        return username.trim().matches("^[a-zA-Z0-9._-]{3,}$");
     }
 
     public boolean validateEmail(String email) {
@@ -15,6 +15,7 @@ public class UserValidator {
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(email);
             return matcher.matches();
+            // czy w tej metodzie możemy jakoś dodać funkcję "trim()" żeby wyeliminować ewentualne spacje?
         }
         return false;
     }
