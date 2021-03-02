@@ -1,6 +1,7 @@
 package com.kodilla.parametrized_tests;
 
 import java.util.Locale;
+import java.util.stream.Stream;
 
 public class StringManipulator {
 
@@ -18,4 +19,5 @@ public class StringManipulator {
         int count = text.length() - text.replace(",", "").length();
         return count;
     }
+
 }

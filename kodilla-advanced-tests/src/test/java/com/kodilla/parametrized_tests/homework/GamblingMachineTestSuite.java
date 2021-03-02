@@ -3,6 +3,7 @@ package com.kodilla.parametrized_tests.homework;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,8 +14,8 @@ class GamblingMachineTestSuite {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/userNumbers-happyPath.csv")
-    public void shouldReturnHitedNumbers(Set<Integer> userNumbers) throws InvalidNumbersException{
-        gamblingMachine.howManyWins(userNumbers);
+    public void shouldReturnHitNumbers(String userNumbers, String x) throws InvalidNumbersException{
+        gamblingMachine.howManyWins(new HashSet<>());
     }
 
     @ParameterizedTest
