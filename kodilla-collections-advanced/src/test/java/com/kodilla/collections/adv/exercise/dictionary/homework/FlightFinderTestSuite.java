@@ -36,7 +36,7 @@ class FlightFinderTestSuite {
         FlightFinder flightFinder = new FlightFinder();
         List<Flight> flights;
         flights = flightFinder.findFlightsTo("Rzym");
-        assertEquals(2, flights.size());
+        assertEquals(4, flights.size());
         assertEquals("Rzym", flights.get(0).getArrival());
         assertEquals("Rzym", flights.get(1).getArrival());
     }

@@ -1,0 +1,81 @@
+{\rtf1\ansi\ansicpg1250\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 create table ISSUESLISTS\
+(\
+ID serial primary key,\
+NAME varchar(100)\
+);\
+\
+create table ISSUES\
+(\
+ID serial primary key,\
+ISSUESLISTS_ID bigint unsigned not null,\
+foreign key (ISSUESLISTS_ID) references ISSUESLISTS(ID),\
+SUMMARY varchar(100),\
+DESCRIPTION varchar(1024),\
+USER_ID_ASSIGNEDTO bigint unsigned not null,\
+foreign key (USER_ID_ASSIGNEDTO) references USERS(ID)\
+);\
+\
+select * from ISSUES;\
+select * from ISSUESLISTS;\
+\
+insert into ISSUESLISTS (name)\
+values ("ToDo");\
+\
+insert into ISSUESLISTS (name)\
+values ("In progres");\
+\
+insert into ISSUESLISTS (name)\
+values ("Done");\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (1, "stop working", " The app stops working when other app works in the same time", 2);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (1, "photo", "photo of all team is to small", 5);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (1, "empty password", "user with empty password could sign in", 3);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (1, "home page", "loading home page takes too long", 3);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (1, "start button", "star button is to small", 1);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (2, "tutorial", "there is no tutorial for new users", 4);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (2, "Safari browser", "the app doesn't work on Safari browser", 2);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (2, "map", "the map shows wrong direction", 1);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (2, "menu list", "menu list has to be updated", 1);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (2, "colors", "the colors of website are depresing",3);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (3, "font", "font should be bigger and bold", 2);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (3, "logo", "the resolution of logo is to low", 2);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (3, "footer", "there is no footer on website", 1);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (3, "data", "data in table are wrong", 5);\
+\
+insert into ISSUES (issueslists_id, summary, description, user_id_assignedto)\
+values (3, "toolbar", "the toolbar needs update", 5);\
+}
