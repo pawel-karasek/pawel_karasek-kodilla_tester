@@ -8,16 +8,15 @@ import javax.annotation.Resource;
 @Component
 public class ShippingCenter {
 
-    private DeliveryService deliveryService;
-
-    public ShippingCenter(DeliveryService deliveryService) {
-        this.deliveryService = deliveryService;
-    }
+    @Autowired
+    NotificationService notificationService;
+    @Autowired
+    DeliveryService deliveryService;
 
     public String sendPackage(String address, double weight) {
         if (deliveryService.deliverPackage(address, weight)) {
-            return deliveryService.success(address);
+            return notificationService.success(address);
         }
-        return deliveryService.fail(address);
+        return notificationService.fail(address);
     }
 }
