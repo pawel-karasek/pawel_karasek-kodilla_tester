@@ -12,10 +12,9 @@ import java.time.LocalTime;
 class GarageTestSuite {
 
     @Test
-    public void shouldRideSedanLightsOn() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework.sedan");
-        Sedan bean = context.getBean(Sedan.class);
-        Boolean headlightsOn = bean.HasHeadlightsTurnedOn(LocalTime.of(21,22,11));
-        Assertions.assertTrue(headlightsOn == true);
+    public void shouldCreateProperCar() {
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+        Car car = (Car) context.getBean("chooseCar", "winter", LocalTime.of(21, 00));
+        Assertions.assertTrue(car.hasHeadlightsTurnedOn() == true);
     }
 }
