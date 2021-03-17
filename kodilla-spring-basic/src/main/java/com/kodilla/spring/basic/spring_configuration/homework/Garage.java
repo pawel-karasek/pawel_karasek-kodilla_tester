@@ -2,29 +2,26 @@ package com.kodilla.spring.basic.spring_configuration.homework;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Configuration
 public class Garage {
 
     @Bean
-    public Car chooseCar(String season, LocalTime time) {
+    public Car chooseCar() {
         Car car;
-        if (season == "winter") {
+        if (LocalDate.now().getMonthValue() >=1 || LocalDate.now().getMonthValue() <=3) {
             car = new SUV();
 
-
-        } else if (season == "spring" || season == "autumn") {
-            car = new Sedan();
-
-        } else {
+        } else if (LocalDate.now().getMonthValue() >=7 || LocalDate.now().getMonthValue() <=9) {
             car = new Cabrio();
 
+        } else {
+            car = new Sedan();
         }
-        if (time.isAfter(LocalTime.of(20, 00))
-                && time.isBefore(LocalTime.of(06, 00))) {
+        if (LocalTime.now().getHour() >= 20 && LocalTime.now().getHour() <= 6) {
             car.setHeadlightsOn();
         }
         return car;
