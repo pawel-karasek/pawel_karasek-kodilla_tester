@@ -2,6 +2,7 @@ package com.kodilla.rest.controller;
 
 import com.kodilla.rest.domain.BookDto;
 import com.kodilla.rest.service.BookService;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -32,12 +33,14 @@ class BookControllerTest {
         //given
         BookService bookServiceMock = Mockito.mock(BookService.class);
         BookController bookController = new BookController(bookServiceMock);
+        List<BookDto> bookList = new ArrayList<>();
         BookDto bookDto = new BookDto("author", "title");
-        Mockito.when(bookServiceMock.addBook()).thenReturn();
+        Mockito.when(bookServiceMock.addBook(bookDto)).then(bookList.add(bookDto));
         //when
-        BookDto book = bookController.addBook();
+        BookDto book = bookController.addBook(bookDto);
         //then
-
+        Assertions.assertEquals("author", bookDto.getAuthor());
+        Assertions.assertEquals("title", bookDto.getTitle());
     }
 
 }
