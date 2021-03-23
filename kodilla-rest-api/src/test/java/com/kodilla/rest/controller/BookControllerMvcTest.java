@@ -6,6 +6,8 @@ import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -42,5 +44,28 @@ public class BookControllerMvcTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().is(200))
                 .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(2)));
+    }
+
+    @Test
+    public void shouldAddBook() throws Exception {
+        //given
+        List<BookDto> bookList = new ArrayList<>();
+        BookDto bookDto = new BookDto("author", "title");
+        Mockito.doAnswer(new Answer() {
+            public Object answer(InvocationOnMock invocation) {
+                Object[] arguments = invocation.getArguments();
+                BookDto bookdto=(BookDto) arguments[0];
+                bookList.add(bookdto);
+                return null;
+            }})
+                .when(bookService).addBook(bookDto);
+        bookService.addBook(bookDto);
+        Mockito.when(bookService.getBooks()).thenReturn(bookList);
+
+        //when & then
+        mockMvc.perform(MockMvcRequestBuilders.get("/books")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(1)));
     }
 }

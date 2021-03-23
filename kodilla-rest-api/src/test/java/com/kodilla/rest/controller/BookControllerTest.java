@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 class BookControllerTest {
 
@@ -26,7 +28,7 @@ class BookControllerTest {
         //then
         assertThat(result).hasSize(2);
     }
-    
+
     @Test
     public void shouldAddBook() {
         //given
@@ -49,5 +51,17 @@ class BookControllerTest {
         BookDto bdto = result.get((0));
         //then
         assertThat(bdto).isNotNull();
+    }
+
+    @Test
+    public void shouldAddBookVerify() {
+        //given
+        BookService bookServiceMock = Mockito.mock(BookService.class);
+        BookController bookController = new BookController(bookServiceMock);
+        List<BookDto> bookList = new ArrayList<>();
+        BookDto bookDto = new BookDto("author", "title");
+        bookController.addBook(bookDto);
+        bookController.addBook(bookDto);
+        verify(bookServiceMock,times(2)).addBook(bookDto);
     }
 }
