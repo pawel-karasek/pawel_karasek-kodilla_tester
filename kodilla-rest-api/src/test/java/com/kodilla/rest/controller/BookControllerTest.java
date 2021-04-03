@@ -13,7 +13,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 class BookControllerTest {
-
+/*
     @Test
     public void shouldFetchBooks() {
         //given
@@ -64,4 +64,6 @@ class BookControllerTest {
         bookController.addBook(bookDto);
         verify(bookServiceMock,times(2)).addBook(bookDto);
     }
+
+ */
 }
