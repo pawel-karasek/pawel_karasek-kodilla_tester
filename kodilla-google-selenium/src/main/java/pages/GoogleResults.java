@@ -25,9 +25,7 @@ public class GoogleResults extends AbstractPage {
     public void clickRandomResult() {
         Random random = new Random();
         int result = random.nextInt(6);
-        randomResult = results.get(result);// usunąłem prametr GoogleResults googleResults
-        WebDriverWait wait = new WebDriverWait(driver, 10); //
-        wait.until(ExpectedConditions.elementToBeClickable(randomResult)); // dodałem warunek żeby randomResult było klikalne
+        randomResult = results.get(result);
         randomResult.click();
     }
 
