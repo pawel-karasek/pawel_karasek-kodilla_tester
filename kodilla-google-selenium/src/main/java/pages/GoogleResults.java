@@ -6,9 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
+import java.util.Random;
 
 public class GoogleResults extends AbstractPage {
-/*
+
     @FindBy(css = "div[class='g']")
     private List<WebElement> results;
 
@@ -21,13 +22,11 @@ public class GoogleResults extends AbstractPage {
         System.out.println("I see results");
         System.out.println(results.size());
     }
-/*
+
     public void clickRandomResult() {
         Random random = new Random();
         int result = random.nextInt(6);
-        randomResult = results.get(result);
+        WebElement randomResult = results.get(result);
         randomResult.click();
     }
-
- */
 }

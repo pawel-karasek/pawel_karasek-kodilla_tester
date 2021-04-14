@@ -7,7 +7,7 @@ import pages.GoogleSearch;
 
 
 public class TestGoogle {
-/*
+
     WebDriver driver;
 
     @Before
@@ -27,6 +27,4 @@ public class TestGoogle {
         GoogleSearch googleSearch = new GoogleSearch(driver);
         googleSearch.searchResults();
     }
-
- */
 }
