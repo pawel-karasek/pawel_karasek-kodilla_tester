@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class GoogleResults extends AbstractPage {
-
+/*
     @FindBy(css = "div[class='g']")
     private List<WebElement> results;
 

@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 public class GoogleSearch extends AbstractPage {
-
+/*
     @FindBy(css = "input[title='Szukaj']")
     static WebElement inputField;
 
@@ -31,9 +31,11 @@ public class GoogleSearch extends AbstractPage {
 
     public GoogleResults loadResults(WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(searchButton.get(1)));
+        wait.until.ExpectedConditions.elementToBeClickable(searchButton.get(1));
         searchButton.get(1).submit();
         GoogleResults googleResults = new GoogleResults(driver);
         return googleResults;
     }
+
+ */
 }
