@@ -1,12 +1,9 @@
 package com.kodilla.mockito.notification.homework;
 
-import com.kodilla.mockito.notification.Client;
-import com.kodilla.mockito.notification.Notification;
-import com.kodilla.mockito.notification.NotificationService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class WeatherAlertServiceTestSuite {
     WeatherAlertService weatherAlertService = new WeatherAlertService();

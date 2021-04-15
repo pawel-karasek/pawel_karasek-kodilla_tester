@@ -23,16 +23,17 @@ public class GoogleSearch extends AbstractPage {
         super(driver);
     }
 
-    public void searchResults() {
+    public GoogleResults searchResults() {
         PageFactory.initElements(driver, GoogleSearch.class);
         inputField.sendKeys("Kodilla");
         googleResults = loadResults(driver);
         googleResults.iSeeResults();
+        return googleResults;
     }
 
     public GoogleResults loadResults(WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[1]")));
+        wait.until(webDriver -> ExpectedConditions.elementToBeClickable(searchButton.get(1)));
         searchButton.get(1).submit();
         GoogleResults googleResults = new GoogleResults(driver);
         return googleResults;
