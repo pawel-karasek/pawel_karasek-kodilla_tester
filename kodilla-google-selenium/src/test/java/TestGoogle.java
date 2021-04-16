@@ -2,9 +2,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.GoogleResults;
 import pages.GoogleSearch;
+import pages.RandomPage;
 
 
 public class TestGoogle {
@@ -33,7 +35,6 @@ public class TestGoogle {
     public void shouldOpenRandomResult() {
         GoogleSearch googleSearch = new GoogleSearch(driver);
         GoogleResults googleResults = googleSearch.searchResults();
-        //GoogleResults x = new GoogleResults(driver);
         googleResults.clickRandomResult();
     }
 }

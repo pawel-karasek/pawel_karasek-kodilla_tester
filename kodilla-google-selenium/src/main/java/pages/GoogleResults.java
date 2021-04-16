@@ -1,9 +1,10 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
@@ -11,11 +12,8 @@ import java.util.Random;
 
 public class GoogleResults extends AbstractPage {
 
-    //@FindBy(css = " div.yuRUbf > a")
-    //private List<WebElement> results;
-    WebElement randomResult;
-
-    private List<WebElement> results = driver.findElements(By.cssSelector(" div.yuRUbf > a"));
+    private List<WebElement> results = driver.findElements(By.cssSelector("div.yuRUbf > a"));
+    RandomPage randomPage = new RandomPage(driver);
 
     public GoogleResults(WebDriver driver) {
         super(driver);
@@ -29,8 +27,9 @@ public class GoogleResults extends AbstractPage {
 
     public void clickRandomResult() {
         Random random = new Random();
-        int result = random.nextInt(6);
-        randomResult = results.get(result);
-        randomResult.click();
+        int result = random.nextInt(7);
+        randomPage.randomResult = results.get(result);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(randomPage.randomResult).click().perform();
     }
 }
