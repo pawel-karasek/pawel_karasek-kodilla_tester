@@ -4,7 +4,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/is_it_summet.feature", "src/test/resources/is_number_divisible.feature"}
+        features = {
+                "src/test/resources/seasonChecker/is_it_summet.feature",
+                "src/test/resources/seasonChecker/is_number_divisible.feature",
+                "src/test/resources/wallet/cash_withdrawal.feature"}
 )
 
 public class TestRunner {
