@@ -3,11 +3,7 @@ Feature: Cash Withdrawal
     Given I have deposited $200 in my wallet
     When I request $30
     Then $30 should be dispensed
-
-  Scenario: Unsuccessful withdrawal to big amount
-    Given I have deposited $200 in my wallet
-    When I request $201
-    Then should display alert1 "You don't have enough money"
+    And the balance of my wallet should be $170
 
   Scenario: Unsuccessful withdrawal amount $0
     Given I have deposited $200 in my wallet
