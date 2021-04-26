@@ -28,35 +28,36 @@ class DbManagerTestSuite {
         int count = 0;
         while (rs.next()) {
             count = rs.getInt("COUNT(*)");
-
-            String sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Zara', 'Ali')";
-            statement.executeUpdate(sql);
-            sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Otman', 'Use')";
-            statement.executeUpdate(sql);
-            sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Mark', 'Boq')";
-            statement.executeUpdate(sql);
-            sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Uli', 'Wimer')";
-            statement.executeUpdate(sql);
-            sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Oli', 'Kosiw')";
-            statement.executeUpdate(sql);
-
-            //When
-            String sqlQuery = "SELECT * FROM USERS";
-            statement = dbManager.getConnection().createStatement();
-            rs = statement.executeQuery(sqlQuery);
-
-            //Then
-            int counter = 0;
-            while (rs.next()) {
-                System.out.println(rs.getInt("ID" + ", " +
-                        rs.getString("FIRSTNAME" + ", " +
-                                rs.getString("LASTNAME"))));
-                counter++;
-            }
-            rs.close();
-            statement.close();
-            Assertions.assertEquals(5, counter);
         }
+        String sql = "DELETE FROM USERS";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(ID, FIRSTNAME, LASTNAME) VALUES (1, 'Zara', 'Ali')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(ID, FIRSTNAME, LASTNAME) VALUES (2, 'Otman', 'Use')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(ID, FIRSTNAME, LASTNAME) VALUES (3, 'Mark', 'Boq')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(ID, FIRSTNAME, LASTNAME) VALUES (4, 'Uli', 'Wimer')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(ID, FIRSTNAME, LASTNAME) VALUES (5, 'Oli', 'Kosiw')";
+        statement.executeUpdate(sql);
+
+        //When
+        String sqlQuery = "SELECT * FROM USERS";
+        statement = dbManager.getConnection().createStatement();
+        rs = statement.executeQuery(sqlQuery);
+
+        //Then
+        int counter = 0;
+        while (rs.next()) {
+            System.out.println(rs.getInt("ID") + ", " +
+                    rs.getString("FIRSTNAME") + ", " +
+                    rs.getString("LASTNAME"));
+            counter++;
+        }
+        rs.close();
+        statement.close();
+        Assertions.assertEquals(5, counter);
     }
 
     @Test
@@ -70,15 +71,15 @@ class DbManagerTestSuite {
         statement.executeUpdate(sql);
         sql = "DELETE FROM USERS";
         statement.executeUpdate(sql);
-        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('John', 'Smith')";
+        sql = "INSERT INTO USERS(ID, FIRSTNAME, LASTNAME) VALUES (1, 'John', 'Smith')";
         statement.executeUpdate(sql);
-        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Zachary', 'Lee')";
+        sql = "INSERT INTO USERS(ID, FIRSTNAME, LASTNAME) VALUES (2, 'Zachary', 'Lee')";
         statement.executeUpdate(sql);
-        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Stephanie', 'Kovalsky')";
+        sql = "INSERT INTO USERS(ID, FIRSTNAME, LASTNAME) VALUES (3, 'Stephanie', 'Kovalsky')";
         statement.executeUpdate(sql);
-        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Thomas', 'Landgren')";
+        sql = "INSERT INTO USERS(ID, FIRSTNAME, LASTNAME) VALUES (4, 'Thomas', 'Landgren')";
         statement.executeUpdate(sql);
-        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('John', 'Thomas')";
+        sql = "INSERT INTO USERS(ID, FIRSTNAME, LASTNAME) VALUES (5, 'John', 'Thomas')";
         statement.executeUpdate(sql);
 
         sql = "INSERT INTO POSTS(USER_ID, BODY) VALUES (1, 'This is my first post on thin forum!')";
@@ -105,7 +106,7 @@ class DbManagerTestSuite {
         while (rs.next()) {
             System.out.println(rs.getString("FIRSTNAME") + ", " +
                     rs.getString("LASTNAME") + ", " +
-                            rs.getInt("POSTS_NUMBER"));
+                    rs.getInt("POSTS_NUMBER"));
             counter++;
         }
         rs.close();
