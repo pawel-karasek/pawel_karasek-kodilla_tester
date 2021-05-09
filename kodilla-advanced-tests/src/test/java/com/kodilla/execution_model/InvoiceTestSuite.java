@@ -2,6 +2,8 @@ package com.kodilla.execution_model;
 
 import org.junit.jupiter.api.*;
 
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -19,15 +21,6 @@ public class InvoiceTestSuite {
         int numbersOfItem = invoice.getSize();
         //then
         assertEquals(3, numbersOfItem);
-    }
-
-    @Test
-    public void shouldGetWalletAndPrice() {
-        //when
-        invoice.getItem(1);
-        //then
-        assertEquals("wallet", wallet.getName());
-        assertEquals(450, wallet.getPrice());
     }
 
     @Test
@@ -51,6 +44,14 @@ public class InvoiceTestSuite {
         invoice.clear();
         //then
         assertEquals(0, invoice.getSize());
+    }
+
+    @Test
+    public void shouldGetSize() {
+        //When
+        int size = invoice.getSize();
+        //Then
+        Assertions.assertEquals(3, size);
     }
 
     @BeforeEach

@@ -3,7 +3,7 @@ package com.kodilla.execution_model;
 import java.time.LocalDate;
 
 public class Order {
-    private  double orderValue;
+    private double orderValue;
     private LocalDate orderDate;
     private String userLogin;
 
