@@ -20,11 +20,11 @@ public class CalcApplication {
         } else {
             System.out.println("Róźnica nie działa poprawnie dla liczb \" + calculator.firstNumber + \" i \" + calculator.secondNumber");
         }
-            boolean correctSquare = ResultChecker.assertEquals(484, squareResult);
-            if (correctSquare) {
-                System.out.println("Kwadrat liczby działa poprawnie dla liczby " + calculator.firstNumber);
-            } else {
-                System.out.println("Kwadrat liczby działa poprawnie dla liczby " + calculator.firstNumber);
-            }
+        boolean correctSquare = ResultChecker.assertEquals(484, squareResult);
+        if (correctSquare) {
+            System.out.println("Kwadrat liczby działa poprawnie dla liczby " + calculator.firstNumber);
+        } else {
+            System.out.println("Kwadrat liczby działa poprawnie dla liczby " + calculator.firstNumber);
         }
     }
+}

@@ -1,5 +1,6 @@
 package com.kodilla.mockito.notification.homework;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -27,17 +28,14 @@ class WeatherAlertServiceTestSuite {
         Mockito.verify(client, Mockito.times(3)).getName();
     }
 
-    @Test
+/*    @Test
     public void shouldRemoveClientFromAllLocationAlerts() {
-        /*
         Mockito.when(client.getName()).thenReturn("client");
         Mockito.when(location.getName()).thenReturn("location");
         weatherAlertService.addSubscriberToLocation(location.getName(), client);
         weatherAlertService.removeSubscriberFromAllLocations("client");
         Mockito.verify(location, Mockito.times(1)).getClients();
-
-         */
-    }
+    }*/
 
     @Test
     public void subscribedClientsShouldReceiveOnlySubscribesLocationAlerts() {
@@ -67,4 +65,9 @@ class WeatherAlertServiceTestSuite {
         assertEquals(1, weatherAlertService.locations.size());
     }
 
+    @Test
+    void shouldAddLocation() {
+        weatherAlertService.addLocation(new Location("New York"));
+        Assertions.assertEquals(1, weatherAlertService.locations.size());
+    }
 }

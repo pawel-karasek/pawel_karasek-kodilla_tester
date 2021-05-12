@@ -12,8 +12,8 @@ public class Bank {
         this.cashMachines = newTab;
     }
 
-    public int getBalance() {
-        int sum = 0;
+    public double getBalance() {
+        double sum = 0;
         for (int i = 0; i < cashMachines.length; i++) {
             sum = sum + cashMachines[i].getBalance();
         }
@@ -36,15 +36,15 @@ public class Bank {
         return sum;
     }
 
-    public int getAveragePayOut() {
-        int sum = 0;
+    public double getAveragePayOut() {
+        double sum = 0;
         for (int i = 0; i < cashMachines.length; i++) {
             sum = sum + cashMachines[i].payOuts();
         }
         return sum / getPayOutsCount();
     }
-    public int getAveragePayIn() {
-        int sum = 0;
+    public double getAveragePayIn() {
+        double sum = 0;
         for (int i = 0; i < cashMachines.length; i++) {
             sum = sum + cashMachines[i].payIns();
         }

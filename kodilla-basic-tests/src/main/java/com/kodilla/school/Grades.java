@@ -16,6 +16,7 @@ public class Grades {
         newTab[this.size - 1] = value;
         this.values = newTab;
     }
+
     public int[] getValues() {
         return values;
     }
@@ -25,9 +26,9 @@ public class Grades {
             return 0;
         }
         double sum = 0;
-            for (int i = 0; i < this.values.length; i++) {
-                sum += this.values[i];
-            }
-            return sum/this.values.length;
+        for (int i = 0; i < this.values.length; i++) {
+            sum += this.values[i];
+        }
+        return sum / this.values.length;
     }
 }

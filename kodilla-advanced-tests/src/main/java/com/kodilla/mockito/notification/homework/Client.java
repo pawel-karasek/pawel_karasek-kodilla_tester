@@ -1,7 +1,5 @@
 package com.kodilla.mockito.notification.homework;
 
-import com.kodilla.mockito.notification.Notification;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +16,7 @@ public class Client implements IClient {
     }
 
     List<INotification> notifications = new ArrayList<INotification>();
+
     public void receive(INotification notification) {
         notifications.add(notification);
     }
