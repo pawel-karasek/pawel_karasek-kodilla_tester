@@ -5,8 +5,6 @@ import com.kodilla.collections.interfaces.Shape;
 import com.kodilla.collections.interfaces.Square;
 import com.kodilla.collections.interfaces.Triangle;
 
-import java.util.Random;
-
 public class ShapeUtils {
     public static void displayShapeInfo(Shape shape) {
         System.out.println("-----------------");
@@ -14,6 +12,7 @@ public class ShapeUtils {
         System.out.println("Shape area: " + shape.getArea());
         System.out.println("Shape perimeter: " + shape.getPerimeter());
     }
+
     private static String getShapeName(Shape shape) {
         if (shape instanceof Circle)
             return "Circle";

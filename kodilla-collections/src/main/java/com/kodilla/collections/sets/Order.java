@@ -35,7 +35,8 @@ public class Order {
                 && Objects.equals(productName, order.productName);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(orderNumber, productName, quantity);
     }
 

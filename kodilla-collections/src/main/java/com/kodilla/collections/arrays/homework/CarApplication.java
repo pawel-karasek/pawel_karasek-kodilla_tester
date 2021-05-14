@@ -13,7 +13,7 @@ public class CarApplication {
     public static void main(String[] args) {
         Random random = new Random();
         Car[] garage = new Car[random.nextInt(15) + 1];
-        for (int i = 0; i <garage.length; i++)
+        for (int i = 0; i < garage.length; i++)
             garage[i] = drawCar();
         for (Car car : garage)
             CarUtils.describeCar(car);
@@ -29,8 +29,8 @@ public class CarApplication {
 
         Car car = cars[carIndex];
         for (int i = 0; i < increments; i++) {
-        car.increaseSpeed();
+            car.increaseSpeed();
         }
-            return car;
+        return car;
     }
 }

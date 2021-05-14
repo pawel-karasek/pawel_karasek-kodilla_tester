@@ -9,10 +9,10 @@ public class IsNumberDivisible implements En {
     private int number;
     private String result;
 
-   public IsNumberDivisible() {
+    public IsNumberDivisible() {
 
         Given("number 24", () -> {
-            this.number= 24;
+            this.number = 24;
         });
 
         When("it is divisible by 3", () -> {
@@ -21,7 +21,7 @@ public class IsNumberDivisible implements En {
         });
 
         Given("number 4", () -> {
-            this.number= 4;
+            this.number = 4;
         });
 
         When("it isn't divisible by 3", () -> {
@@ -30,7 +30,7 @@ public class IsNumberDivisible implements En {
         });
 
         Given("number 40", () -> {
-            this.number= 40;
+            this.number = 40;
         });
 
         When("it is divisible by 5", () -> {
@@ -39,7 +39,7 @@ public class IsNumberDivisible implements En {
         });
 
         Given("number 53", () -> {
-            this.number= 53;
+            this.number = 53;
         });
 
         When("it isn't divisible by 5", () -> {
@@ -48,7 +48,7 @@ public class IsNumberDivisible implements En {
         });
 
         Given("number 15", () -> {
-            this.number= 15;
+            this.number = 15;
         });
 
         When("it is divisible by 3 and 5", () -> {
@@ -57,7 +57,7 @@ public class IsNumberDivisible implements En {
         });
 
         Given("number 13", () -> {
-            this.number= 13;
+            this.number = 13;
         });
 
         When("it isn't divisible by 3 and 5", () -> {

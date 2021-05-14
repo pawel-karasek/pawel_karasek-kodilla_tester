@@ -7,6 +7,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FlightFinderTestSuite {
+        FlightFinder flightFinder = new FlightFinder();
+        List<Flight> flights;
+
     public void init() {
 
         Flight flight1 = new Flight("Paryż", "Londyn");
@@ -23,8 +26,6 @@ class FlightFinderTestSuite {
     @Test
     public void testFindFlightsFrom() {
         init();
-        FlightFinder flightFinder = new FlightFinder();
-        List<Flight> flights;
         flights = flightFinder.findFlightsFrom("Paryż");
         assertEquals(2, flights.size());
         assertEquals("Paryż", flights.get(0).getDeparture());
@@ -33,8 +34,6 @@ class FlightFinderTestSuite {
     @Test
     public void testFindFlightsTo() {
         init();
-        FlightFinder flightFinder = new FlightFinder();
-        List<Flight> flights;
         flights = flightFinder.findFlightsTo("Rzym");
         assertEquals(4, flights.size());
         assertEquals("Rzym", flights.get(0).getArrival());

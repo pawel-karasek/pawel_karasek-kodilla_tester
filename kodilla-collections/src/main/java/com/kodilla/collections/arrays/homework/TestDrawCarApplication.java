@@ -7,6 +7,6 @@ public class TestDrawCarApplication {
     public static void main(String[] args) {
 
         Car randomSpeed = CarApplication.drawCar();
-        System.out.println(randomSpeed.getName() + " = "+ randomSpeed.getSpeed());
+        System.out.println(randomSpeed.getName() + " = " + randomSpeed.getSpeed());
     }
 }

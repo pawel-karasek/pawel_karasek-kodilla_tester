@@ -16,6 +16,7 @@ public class ShapeApplication {
         for (Shape shape : shapes)
             ShapeUtils.displayShapeInfo(shape);
     }
+
     private static Shape drawShape() {
         Random random = new Random();
         int drawnShapeKind = random.nextInt(3);
@@ -24,9 +25,9 @@ public class ShapeApplication {
         double c = random.nextDouble() * 100 + 1;
         if (drawnShapeKind == 0)
             return new Circle(a);
-            else if (drawnShapeKind == 1)
+        else if (drawnShapeKind == 1)
             return new Square(a);
-            else
+        else
             return new Triangle(a, b, c);
     }
 }

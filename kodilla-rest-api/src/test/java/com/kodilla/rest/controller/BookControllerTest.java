@@ -13,7 +13,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 class BookControllerTest {
-/*
+
     @Test
     public void shouldFetchBooks() {
         //given
@@ -65,5 +65,23 @@ class BookControllerTest {
         verify(bookServiceMock,times(2)).addBook(bookDto);
     }
 
- */
+    @Test
+    void shouldRemoveBook() {
+        BookService bookServiceMock = Mockito.mock(BookService.class);
+        BookController bookController = new BookController(bookServiceMock);
+        List<BookDto> bookList = new ArrayList<>();
+        BookDto bookDto = new BookDto("author", "title");
+        bookController.addBook(bookDto);
+        bookController.removeBook(bookDto);
+        verify(bookServiceMock,times(1)).addBook(bookDto);
+        verify(bookServiceMock, times(1)).removeBook(bookDto);
+    }
+
+    @Test
+    void shouldPrintAuthorAndTitle() {
+        BookService bookServiceMock = Mockito.mock(BookService.class);
+        BookController bookController = new BookController(bookServiceMock);
+        BookDto bookDto = new BookDto("author", "title");
+        System.out.println(bookDto.getAuthor() + ", " + bookDto.getTitle());
+    }
 }

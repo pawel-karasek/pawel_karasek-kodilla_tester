@@ -27,7 +27,7 @@ public class Stamp {
         return width;
     }
 
-    private String isStamped() {
+    public String isStamped() {
         if (marked){
             return "is marked";
         } else {

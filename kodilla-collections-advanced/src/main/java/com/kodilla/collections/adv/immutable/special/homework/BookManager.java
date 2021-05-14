@@ -10,9 +10,9 @@ public class BookManager {
     public static Book createBook(String title, String author) {
         Book book = new Book(title, author);
         for (Book currentBook : books) {
-                if (currentBook.equals(book)) {
-                    return currentBook;
-                }
+            if (currentBook.equals(book)) {
+                return currentBook;
+            }
         }
         books.add(book);
         return book;
